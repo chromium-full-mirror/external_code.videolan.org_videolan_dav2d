@@ -40,8 +40,8 @@ static ALWAYS_INLINE void itx_dsp_init_x86(Dav2dInvTxfmDSPContext *const c)
     assign_itx_fn( ,  4,  4, avx2);
     assign_itx_fn(R,  4,  8, avx2);
     assign_itx_fn(R,  4, 16, avx2);
-#if BITDEPTH == 8
     assign_itx_fn(R,  4, 32, avx2);
+#if BITDEPTH == 8
     assign_itx_fn(R,  4, 64, avx2);
 #endif
     assign_itx_fn(R,  8,  4, avx2);
@@ -57,7 +57,9 @@ static ALWAYS_INLINE void itx_dsp_init_x86(Dav2dInvTxfmDSPContext *const c)
 #if BITDEPTH == 8
     assign_itx_fn(R, 16, 32, avx2);
     assign_itx_fn(R, 16, 64, avx2);
+#endif
     assign_itx_fn(R, 32,  4, avx2);
+#if BITDEPTH == 8
     assign_itx_fn(R, 32,  8, avx2);
     assign_itx_fn(R, 32, 16, avx2);
     assign_itx_fn( , 32, 32, avx2);
